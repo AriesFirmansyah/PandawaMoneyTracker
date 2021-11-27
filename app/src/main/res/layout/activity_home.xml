@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:padding="40dp">
+
+
+        <ImageView
+            android:id="@+id/btnTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:src="@drawable/input"
+            android:background="#DEDFE3"
+            android:clickable="true"
+            android:layout_marginEnd="15dp"/>
+
+        <ImageView
+            android:id="@+id/btnHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:src="@drawable/planning"
+            android:background="#DEDFE3"
+            android:clickable="true"
+            android:layout_marginStart="15dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:padding="40dp">
+
+        <ImageView
+            android:id="@+id/btnPlanning"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:src="@drawable/history"
+            android:background="#DEDFE3"
+            android:clickable="true"
+            android:layout_marginEnd="15dp"/>
+
+        <ImageView
+            android:id="@+id/btnReport"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:src="@drawable/report"
+            android:background="#DEDFE3"
+            android:clickable="true"
+            android:layout_marginStart="15dp"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

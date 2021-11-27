@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    tools:context=".PlanningActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Planning"
+            android:textAlignment="center"
+            android:layout_marginTop="130sp"
+            android:textSize="40sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="50sp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_baseline_notes_24"
+            android:contentDescription="Notes"/>
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:hint="Add Notes"
+            android:inputType="text"
+            android:id="@+id/addnotes"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_baseline_attach_money_24"
+            android:contentDescription="Notes"/>
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:hint="Rp"
+            android:inputType="number"
+            android:id="@+id/addmoney"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_baseline_category_24"
+            android:contentDescription="Notes"/>
+
+        <Spinner
+            android:id="@+id/static_spinner"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_marginStart="50sp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10sp">
+        <Button
+            android:id="@+id/btnBatal"
+            android:layout_width="150sp"
+            android:layout_height="match_parent"
+            android:text="Batal"
+            android:backgroundTint="@color/red"
+            tools:ignore="InvalidId" />
+        <Button
+            android:id="@+id/btnSimpan"
+            android:layout_width="150sp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30sp"
+            android:text="Simpan"/>
+    </LinearLayout>
+
+
+</LinearLayout>

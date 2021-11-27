@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#425e5b"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="#ab3433"
+            android:layout_gravity="center|center_vertical">
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register Page" />
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login Page" />
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/btnHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Home Page" />
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/btnReport1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Report Page" />
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/btnTransaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transaction Page" />
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/btnPlanning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Planning Page" />
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/btnHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="History Page" />
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logout" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

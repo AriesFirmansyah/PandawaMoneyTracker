@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1084214908538",
+    "firebase_url": "https://pandawamoneytracker-default-rtdb.firebaseio.com",
+    "project_id": "pandawamoneytracker",
+    "storage_bucket": "pandawamoneytracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084214908538:android:b8fac5978bd7d0893ecdc3",
+        "android_client_info": {
+          "package_name": "id.ac.umn.pandawa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084214908538-fibtin9rt4gnknd9bs3309rku1vf1fpn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-Rb2J17i85TVq7DYSvAWw7VzPXuKoW2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084214908538-fibtin9rt4gnknd9bs3309rku1vf1fpn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
