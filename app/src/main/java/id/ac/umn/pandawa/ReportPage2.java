@@ -207,8 +207,9 @@ public class ReportPage2 extends AppCompatActivity {
                 return true;
             case R.id.action_logout:
                 mAuth.signOut();
-                Intent logoutIntent = new Intent(ReportPage2.this,
+                Intent logoutIntent = new Intent(getApplicationContext(),
                         HomeActivity.class);
+                logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(logoutIntent);
                 return true;
 
