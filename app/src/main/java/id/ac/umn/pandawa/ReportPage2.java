@@ -6,6 +6,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -14,7 +15,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,6 +27,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -44,6 +56,7 @@ public class ReportPage2 extends AppCompatActivity {
 
     TextView totalPlanning, totalTransaction;
 
+    Context context;
 
 
     @Override
@@ -53,6 +66,7 @@ public class ReportPage2 extends AppCompatActivity {
 
         setActionBar("Report");
         Calendar c = Calendar.getInstance();
+        context = this;
 
         Intent intent = getIntent();
         startdate = intent.getStringExtra("startdate");
@@ -66,6 +80,11 @@ public class ReportPage2 extends AppCompatActivity {
             e.printStackTrace();
         }
         readData();
+
+        Button btnStorage = findViewById(R.id.btnStorage);
+        btnStorage.setOnClickListener(v -> {
+            writeToFile();
+        });
 
     }
 
@@ -217,5 +236,110 @@ public class ReportPage2 extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
 
         }
+    }
+
+    private void writeToFile() {
+        writePlanning();
+        Toast.makeText(this,
+        "Data stored to data/data/id.ac.umn.pandawa/files/Report Pandawa.txt",
+                Toast.LENGTH_SHORT).show();
+
+    }
+    protected void writePlanning() {
+        databaseReference = db.getReference("users").child(user.getUid()).child("planning");
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int i = 0;
+                if (dataSnapshot.exists()) {
+                    JSONObject jsonObject = new JSONObject();
+                    for (DataSnapshot data : dataSnapshot.getChildren()) {
+                        UserData dataPlanning = data.getValue(UserData.class);
+                        try {
+                            jsonObject.put("category", dataPlanning.category);
+                            jsonObject.put("notes", dataPlanning.notes);
+                            jsonObject.put("money", dataPlanning.money);
+                            jsonObject.put("tanggal", dataPlanning.tanggal.toString());
+                            jsonObject.put("jenis", "planning");
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        if(i < 0) {
+                            try {
+                                OutputStreamWriter outputStreamWriter =
+                                        new OutputStreamWriter(context.openFileOutput("Report Pandawa.txt",
+                                                Context.MODE_PRIVATE));
+                                outputStreamWriter.write(jsonObject.toString());
+                                outputStreamWriter.close();
+                            } catch (IOException e) {
+                                Log.e("Exception", "File write failed: " + e.toString());
+                            }
+                        } else {
+                            try {
+                                OutputStreamWriter outputStreamWriter =
+                                        new OutputStreamWriter(context.openFileOutput("Report Pandawa.txt",
+                                                Context.MODE_PRIVATE));
+                                outputStreamWriter.append(jsonObject.toString());
+                                outputStreamWriter.close();
+                            } catch (IOException e) {
+                                Log.e("Exception", "File write failed: " + e.toString());
+                            }
+                        }
+                    }
+                }
+                i = 0;
+                writeTransaction();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+            }
+        };
+        databaseReference.addValueEventListener(postListener);
+    }
+
+    protected void writeTransaction() {
+        databaseReference = db.getReference("users").child(user.getUid()).child("transaction");
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                JSONObject jsonObject = new JSONObject();
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot data : dataSnapshot.getChildren()) {
+                        UserData dataPlanning = data.getValue(UserData.class);
+                        try {
+                            jsonObject.put("category", dataPlanning.category);
+                            jsonObject.put("notes", dataPlanning.notes);
+                            jsonObject.put("money", dataPlanning.money);
+                            jsonObject.put("tanggal", dataPlanning.tanggal.toString());
+                            jsonObject.put("jenis", "Transaction");
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+                        try {
+                            OutputStreamWriter outputStreamWriter =
+                                    new OutputStreamWriter(context.openFileOutput("Report Pandawa.txt",
+                                            Context.MODE_APPEND));
+                            outputStreamWriter.append(jsonObject.toString());
+                            outputStreamWriter.close();
+                        } catch (IOException e) {
+                            Log.e("Exception", "File write failed: " + e.toString());
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+            }
+        };
+        databaseReference.addValueEventListener(postListener);
     }
 }

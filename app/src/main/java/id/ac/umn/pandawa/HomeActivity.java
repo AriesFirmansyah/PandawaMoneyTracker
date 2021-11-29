@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class HomeActivity extends AppCompatActivity {
     FirebaseAuth authentication;
     CardView btnTransaction, btnHistory, btnPlanning, btnReport;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
