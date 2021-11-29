@@ -3,11 +3,12 @@
 
     <string-array name="brew_array">
         <item>Choose a Category</item>
-        <item>Cappuccino</item>
-        <item>Espresso</item>
-        <item>Mocha</item>
-        <item>Caffè Americano</item>
-        <item>Cafe Zorro</item>
+        <item>Food And Beverage</item>
+        <item>Transportation</item>
+        <item>Water Bill</item>
+        <item>Phone Bill</item>
+        <item>Electricity Bill</item>
+        <item>Internet Bill</item>
     </string-array>
     <string name="title_activity_drawer">DrawerActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
