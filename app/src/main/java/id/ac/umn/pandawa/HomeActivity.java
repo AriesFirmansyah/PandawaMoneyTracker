@@ -79,15 +79,11 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_home:
-                Intent homeIntent = new Intent(HomeActivity.this,
-                        HomeActivity.class);
-                startActivity(homeIntent);
+                finish();
                 return true;
             case R.id.action_logout:
-                Intent logoutIntent = new Intent(HomeActivity.this,
-                        LoginActivity.class);
-                startActivity(logoutIntent);
                 authentication.signOut();
+                finish();
                 return true;
 
             default:
