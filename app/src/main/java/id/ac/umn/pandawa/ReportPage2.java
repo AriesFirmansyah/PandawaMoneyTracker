@@ -38,7 +38,7 @@ public class ReportPage2 extends AppCompatActivity {
 
     String startdate, enddate;
     Date dateStart, dateEnd;
-    public float jumlah;
+    public float jumlah, jumlahTransaction;
 
     TextView totalPlanning, totalTransaction;
 
@@ -150,7 +150,7 @@ public class ReportPage2 extends AppCompatActivity {
 
 //                            If temp after dateStart dan temp before dateEnd
                             if (temp.compareTo(dateStart) > 0 && temp.compareTo(dateEnd) < 0) {
-                                jumlah += Float.parseFloat(dataPlanning.money);
+                                jumlahTransaction += Float.parseFloat(dataPlanning.money);
 
                                 System.out.println(
                                         "true"
@@ -164,17 +164,17 @@ public class ReportPage2 extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         System.out.println(
-                                jumlah
+                                jumlahTransaction
                         );
                     }
                     totalTransaction = findViewById(R.id.totalTransaction);
 
-                    jumlah = (int) jumlah;
+                    jumlahTransaction = (int) jumlahTransaction;
 
                     Locale localeID = new Locale("in", "ID");
                     NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
-                    totalTransaction.setText(formatRupiah.format((double) jumlah));
+                    totalTransaction.setText(formatRupiah.format((double) jumlahTransaction));
 
                 } else {
                     totalTransaction = findViewById(R.id.totalPlanning);
