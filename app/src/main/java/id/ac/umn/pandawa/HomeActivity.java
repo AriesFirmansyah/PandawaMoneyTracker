@@ -52,11 +52,11 @@ public class HomeActivity extends AppCompatActivity {
         FirebaseUser currentuser = authentication.getCurrentUser();
 
         if(currentuser == null) {
-            Toast.makeText(this, "Tidak ada user" + null,
+            Toast.makeText(this, "Not Signed in",
                     Toast.LENGTH_SHORT).show();
+            finish();
         } else {
-            Toast.makeText(this, "Ada user" + currentuser.getDisplayName()
-                    +currentuser.getUid(),
+            Toast.makeText(this, "Welcome " + currentuser.getEmail(),
                     Toast.LENGTH_SHORT).show();
         }
 //        FirebaseAuth.getInstance().signOut();

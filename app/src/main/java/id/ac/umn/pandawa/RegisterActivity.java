@@ -74,5 +74,16 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = authentication.getCurrentUser();
+        if (user != null){
+            finish();
+        }
+//        FirebaseAuth.getInstance().signOut();
+
+    }
+
 
 }

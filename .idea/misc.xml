@@ -23,9 +23,12 @@
         <entry key="..\:/Data/Android Studio/IF570-AL Mobile Application Programming (LAB)/Pandawa/app/src/main/res/layout/activity_report_page1.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/IF570-AL Mobile Application Programming (LAB)/Pandawa/app/src/main/res/layout/activity_report_page2.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/IF570-AL Mobile Application Programming (LAB)/Pandawa/app/src/main/res/layout/activity_transaction.xml" value="0.1" />
+        <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/drawable/border_radius.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/drawable/circular_progress_bar.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/drawable/history.xml" value="0.1" />
+        <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/drawable/loginradius.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
+        <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/drawable/signinradius.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/layout/activity_drawer.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/layout/activity_history.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/layout/activity_home.xml" value="0.1" />
@@ -33,6 +36,7 @@
         <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/layout/activity_planning.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/layout/activity_report_page1.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/layout/activity_report_page2.xml" value="0.1" />
         <entry key="..\:/Data/Android Studio/Pandawa/app/src/main/res/layout/activity_tes.xml" value="0.1" />
