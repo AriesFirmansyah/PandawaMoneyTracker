@@ -2,6 +2,7 @@ package id.ac.umn.pandawa;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class HomeActivity extends AppCompatActivity {
     FirebaseAuth authentication;
-    ImageView btnTransaction, btnHistory, btnPlanning, btnReport;
+    CardView btnTransaction, btnHistory, btnPlanning, btnReport;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
