@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,10 +33,14 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         submitBTN = findViewById(R.id.submitBTN);
         authentication = FirebaseAuth.getInstance();
+        TextView loginIntentLink = findViewById(R.id.signInIntent);
 
         setActionBar("Register");
 
         submitBTN.setOnClickListener(v -> createAuth());
+        loginIntentLink.setOnClickListener(v -> {
+            finish();
+        });
     }
     public void setActionBar(String page) {
         ActionBar actionBar = getSupportActionBar();
