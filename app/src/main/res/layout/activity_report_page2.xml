@@ -6,142 +6,128 @@
     android:layout_height="match_parent"
     tools:context=".ReportPage2"
     android:orientation="vertical"
+    android:background="@color/blue"
     >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/grey"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Start Balance : Rp xx.xxx"
-            android:textColor="@color/black"
-            android:layout_marginTop="10sp"
-            android:layout_marginLeft="5sp"
-            android:layout_marginBottom="10sp"/>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/black"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ending Balance : Rp xx.xxx"
-            android:textColor="@color/black"
-            android:layout_marginTop="10sp"
-            android:layout_marginLeft="5sp"
-            android:layout_marginBottom="10sp"/>
-
-    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="REPORT"
-        android:textSize="25sp"
+        android:textSize="40sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="50dp"
         />
-
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-
+        android:orientation="vertical"
+        android:background="@drawable/border_radius"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@color/green"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Planning"
-                android:textSize="20sp"
+                android:text="TRANSACTION"
+                android:textSize="35sp"
+                android:textStyle="bold"
                 android:textColor="@color/black"
+                android:padding="5dp"
                 />
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/ic_baseline_insert_chart_outlined_24"/>
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/transaction1"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="List of :"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                />
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Total Income"-->
+            <!--                android:textSize="20sp"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                />-->
 
             <TextView
                 android:id="@+id/totalPlanning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Honor 1 : Rp xx.xxx"
-                android:textSize="20sp"
+                android:text="Rp x.xxx.xxx"
+                android:textSize="30sp"
                 android:textColor="@color/black"
+                android:padding="10dp"
                 />
 
         </LinearLayout>
 
         <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
             android:background="@color/black"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
             />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@color/teal_200"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Transaction"
+                android:textSize="35sp"
+                android:text="PLANNING"
+                android:textStyle="bold"
                 android:textColor="@color/black"
+                android:padding="5dp"
                 />
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/ic_baseline_insert_chart_outlined_24"/>
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/plan"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="List of :"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                />
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Total Expense"-->
+            <!--                android:textSize="20sp"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                />-->
 
             <TextView
                 android:id="@+id/totalTransaction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Makan : Rp xx.xxx"
-                android:textSize="20sp"
+                android:text="Rp x.xxx.xxx"
+                android:textSize="30sp"
                 android:textColor="@color/black"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
                 />
         </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>
