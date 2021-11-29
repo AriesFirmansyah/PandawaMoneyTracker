@@ -7,8 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -66,6 +69,9 @@ public class HistoryActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.setTitle(page);
+        actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+
     }
 
     protected void btnInitialize() {
@@ -88,8 +94,15 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
     protected void readData() {
-        readPlanning();
-        readTransaction();
+        if (user != null){
+            readPlanning();
+            readTransaction();
+        } else {
+            linearLoading.setVisibility(View.GONE);
+            noTransaction.setVisibility(View.VISIBLE);
+            noPlanning.setVisibility(View.VISIBLE);
+        }
+
     }
     protected void readPlanning() {
         databaseReference = db.getReference("users").child(user.getUid()).child("planning");
@@ -116,6 +129,7 @@ public class HistoryActivity extends AppCompatActivity {
                     rvPlanning.setLayoutManager(new LinearLayoutManager(HistoryActivity.this));
                 } else {
                     noPlanning.setVisibility(View.VISIBLE);
+                    linearLoading.setVisibility(View.GONE);
                 }
             }
 
@@ -151,6 +165,7 @@ public class HistoryActivity extends AppCompatActivity {
                     rvHistory.setLayoutManager(new LinearLayoutManager(HistoryActivity.this));
                 } else {
                     noTransaction.setVisibility(View.VISIBLE);
+                    linearLoading.setVisibility(View.GONE);
                 }
 
             }

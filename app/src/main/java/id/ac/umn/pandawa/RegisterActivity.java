@@ -1,8 +1,11 @@
 package id.ac.umn.pandawa;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
@@ -30,9 +33,16 @@ public class RegisterActivity extends AppCompatActivity {
         submitBTN = findViewById(R.id.submitBTN);
         authentication = FirebaseAuth.getInstance();
 
+        setActionBar("Register");
+
         submitBTN.setOnClickListener(v -> createAuth());
-
-
+    }
+    public void setActionBar(String page) {
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setTitle(page);
+        actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
     }
     protected void createAuth() {

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/blue"
     tools:context=".HistoryActivity">
 
     <LinearLayout
@@ -34,6 +35,7 @@
         android:paddingLeft="15dp"
         android:textStyle="bold"
         android:paddingTop="15dp"
+        android:textColor="@color/white"
         android:textSize="20dp"/>
     <TextView
         android:id="@+id/noTransaction"
@@ -42,6 +44,7 @@
         android:text="No Transaction"
         android:layout_gravity="center"
         android:paddingTop="10dp"
+        android:textColor="@color/white"
         android:textSize="15dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -51,6 +54,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -60,6 +64,7 @@
         android:paddingLeft="15dp"
         android:textStyle="bold"
         android:paddingTop="15dp"
+        android:textColor="@color/white"
         android:textSize="20dp"/>
     <TextView
         android:id="@+id/noPlanning"
@@ -68,6 +73,7 @@
         android:text="No Planning"
         android:layout_gravity="center"
         android:paddingTop="10dp"
+        android:textColor="@color/white"
         android:textSize="15dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -77,6 +83,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent" />
 
 </LinearLayout>

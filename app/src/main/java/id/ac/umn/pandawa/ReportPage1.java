@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -65,10 +67,13 @@ public class ReportPage1 extends AppCompatActivity {
         });
     }
 
-    
+
     public void setActionBar(String page) {
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.setTitle(page);
+        actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+
     }
 }

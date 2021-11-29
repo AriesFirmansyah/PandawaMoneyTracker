@@ -4,6 +4,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -30,6 +32,9 @@ public class HomeActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.setTitle(page);
+
+        actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
     }
 
     protected void btnInitialize() {
@@ -59,6 +64,6 @@ public class HomeActivity extends AppCompatActivity {
             Toast.makeText(this, "Welcome " + currentuser.getEmail(),
                     Toast.LENGTH_SHORT).show();
         }
-//        FirebaseAuth.getInstance().signOut();
+//        authentication.signOut();
     }
 }
