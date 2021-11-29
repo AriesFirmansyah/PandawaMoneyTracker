@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -66,4 +68,31 @@ public class HomeActivity extends AppCompatActivity {
         }
 //        authentication.signOut();
     }
+
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_home:
+                Intent homeIntent = new Intent(HomeActivity.this,
+                        HomeActivity.class);
+                startActivity(homeIntent);
+                return true;
+            case R.id.action_logout:
+                Intent logoutIntent = new Intent(HomeActivity.this,
+                        LoginActivity.class);
+                startActivity(logoutIntent);
+                authentication.signOut();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
 }
