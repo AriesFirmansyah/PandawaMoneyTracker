@@ -11,6 +11,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -190,5 +192,29 @@ public class ReportPage2 extends AppCompatActivity {
             }
         };
         databaseReference.addValueEventListener(postListener);
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_home:
+                Intent report2Intent = new Intent(ReportPage2.this,
+                        HomeActivity.class);
+                startActivity(report2Intent);
+                return true;
+            case R.id.action_logout:
+                mAuth.signOut();
+                Intent logoutIntent = new Intent(ReportPage2.this,
+                        HomeActivity.class);
+                startActivity(logoutIntent);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 }
